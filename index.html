@@ -27,6 +27,24 @@
       <div class="signup-link">Belum daftar? <a href="#">Daftar sekarang</a></div>
     </form>
   </div>
+<script>
+    const form = document.getElementById("loginForm");
+    const errorMsg = document.getElementById("errorMsg");
 
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // Hindari reload default form
+
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      // Ganti dengan validasi sesuai kebutuhanmu
+      if (username && password) {
+        // Bisa tambahkan validasi lain di sini
+        window.location.href = "landing.html"; // Redirect
+      } else {
+        errorMsg.textContent = "Isi semua kolom dengan benar.";
+      }
+    });
+  </script>
 </body>
 </html>
