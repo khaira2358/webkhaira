@@ -9,31 +9,44 @@
 </head>
 <body>
   <div class="wrapper">
-    <div class="title"><span>Registrasi</span></div>
+    <div class="title"><span>Login</span></div>
 
-    <!-- ✅ Tambahkan id ke form -->
     <form id="loginForm">
       <div class="row">
         <i class="fas fa-user"></i>
-        <!-- ✅ Tambahkan id ke input -->
-        <input type="text" id="username" placeholder="Email atau No. HP" required />
+        <input type="text" id="username" placeholder="Username" required />
       </div>
       <div class="row">
         <i class="fas fa-lock"></i>
-        <!-- ✅ Tambahkan id ke input -->
-        <input type="password" id="password" placeholder="Kata sandi" required />
+        <input type="password" id="password" placeholder="Password" required />
       </div>
-      <div class="pass"><a href="#">Lupa kata sandi?</a></div>
       <div class="row button">
-        <!-- ✅ Ganti button jadi type="submit", jangan onclick -->
         <button type="submit" class="button">Masuk</button>
       </div>
-      <div class="signup-link">Belum daftar? <a href="#">Daftar sekarang</a></div>
-
-      <!-- ✅ Tempat untuk pesan error -->
       <p id="errorMsg" style="color:red;"></p>
     </form>
   </div>
+
+  <script>
+    const form = document.getElementById("loginForm");
+    const errorMsg = document.getElementById("errorMsg");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value;
+
+      // 🛡️ Validasi username dan password tetap
+      if (username === "admin" && password === "1234") {
+        window.location.href = "landing.html"; // ganti sesuai file kamu
+      } else {
+        errorMsg.textContent = "Username atau password salah!";
+      }
+    });
+  </script>
+</body>
+</html>
 
   <script>
     const form = document.getElementById("loginForm");
